@@ -1,0 +1,26 @@
+{
+  "name": "SeniorProject",
+  "version": "1.0.0",
+  "description": "My College Senior Project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/John-Wilson88/SeniorProject.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/John-Wilson88/SeniorProject/issues"
+  },
+  "homepage": "https://github.com/John-Wilson88/SeniorProject#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "sequelize": "^5.21.5"
+  }
+}
