@@ -1,12 +1,4 @@
-import express from 'express';
-import bodyParser from 'body-parser';
-import Sequelize from 'sequelize';
 import mysql from 'mysql';
-const app = express();
-const PORT = process.env.PORT || 3000;
-
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
 
 const connection = mysql.createConnection({
     port: 3307,
@@ -26,8 +18,4 @@ const connection = mysql.createConnection({
     console.log("connected as id " + connection.threadId);
   });
 
-app.get('/', (req, res) => res.send('Hello World!'));
-
-app.listen(PORT, () => {
-    console.log("App running on PORT: " + PORT);
-});
+  module.exports = connection;
