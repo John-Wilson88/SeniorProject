@@ -1,4 +1,6 @@
-module.exports = (sequelize, Sequelize) => {
+import { DataTypes } from 'sequelize'; // Import the built-in data types
+
+export default (sequelize, Sequelize) => {
     const Workout = sequelize.define('Workout', {
         workoutId: {
             type: DataTypes.UUID,

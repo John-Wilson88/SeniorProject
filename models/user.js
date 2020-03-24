@@ -1,4 +1,6 @@
-module.exports = (sequelize, Sequelize) => {
+import { DataTypes } from 'sequelize'; // Import the built-in data types
+
+export default (sequelize, Sequelize) => {
     const User = sequelize.define('User', {
         userId: {
             type: DataTypes.UUID,
