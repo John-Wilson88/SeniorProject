@@ -1,55 +1,55 @@
-import { DataTypes } from 'sequelize'; // Import the built-in data types
+//import { DataTypes } from 'sequelize'; // Import the built-in data types
 
 export default (sequelize, Sequelize) => {
-    const User = sequelize.define('User', {
-        userId: {
-            type: DataTypes.UUID,
-            defaultValue: Sequelize.UUIDV1,
-            primaryKey: true,
-            allowNull: false
-        },
+    const user = sequelize.define('user', {
+        // userId: {
+        //     type: DataTypes.UUID,
+        //     defaultValue: Sequelize.UUIDV1,
+        //     primaryKey: true,
+        //     allowNull: false
+        // },
         fName: {
-            type: DataTypes.STRING,
+            type: Sequelize.STRING,
             allowNull: false
         },
         lName: {
-            type: DataTypes.STRING,
+            type: Sequelize.STRING,
             allowNull: false
         },
         addressNum: {
-            type: DataTypes.INTEGER,
+            type: Sequelize.INTEGER,
             allowNull: false
         },
         street: {
-            type: DataTypes.STRING,
+            type: Sequelize.STRING,
             allowNull: false
         },
         city: { 
-            type: DataTypes.STRING,
+            type: Sequelize.STRING,
             allowNull: false
         },
         state: {
-            type: DataTypes.STRING,
+            type: Sequelize.STRING,
             allowNull: false
         },
         zipCode: {
-            type: DataTypes.INTEGER,
+            type: Sequelize.INTEGER,
             allowNull: false
         },
         height: {
-            type: DataTypes.INTEGER,
+            type: Sequelize.INTEGER,
             allowNull: false
         },
         weight: {
-            type:DataTypes.INTEGER,
+            type:Sequelize.INTEGER,
             allowNull: false
         },
         dateOfBirth: {
-            type: DataTypes.DATEONLY,
+            type: Sequelize.DATEONLY,
             allowNull: false
         },
         emailAddress: {
-            type:DataTypes.STRING,
+            type:Sequelize.STRING,
             allowNull: false,
             validate: {
                 isEmail: true
@@ -57,6 +57,6 @@ export default (sequelize, Sequelize) => {
         }
     });
 
-    return User;
+    return user;
 
 };

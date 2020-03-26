@@ -1,4 +1,4 @@
-import db from '../models/user.js';
+import db from '../models';
 
 module.exports = (app) => {
     app.get('/api/users', (req, res) => {
@@ -7,14 +7,14 @@ module.exports = (app) => {
         })
     });
 
-    app.post('api/users', (req, res) =>{
-        db.User.create({
+    app.post('/api/user', function(req, res) {
+        db.user.create({
             fName: req.body.fName,
             lName: req.body.fName,
             addressNum: req.body.addressNum,
-            street: req.boy.street,
+            street: req.body.street,
             city: req.body.city,
-            state: req.bodt.state,
+            state: req.body.state,
             zipCode: req.body.zipCode,
             height: req.body.height,
             weight: req.body.weight,
