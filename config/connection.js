@@ -1,11 +1,13 @@
 import mysql from 'mysql';
 
 const connection = mysql.createConnection({
+    port: 3307,
     host: "localhost",
     user: "root",
-    password: "",
-    database: "trackerDB"
-  });
+    password: "root",
+    database: "trackerDB",
+    socketPath: "/Applications/MAMP/tmp/mysql/mysql.sock"
+});
   
   // Connect to the database
   connection.connect(function(err) {

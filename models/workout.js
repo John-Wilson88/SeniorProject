@@ -13,14 +13,14 @@ export default (sequelize, Sequelize) => {
             allowNull: false
         },
         intensity: {
-            type: DataTypes.INTERGER,
+            type: DataTypes.INTEGER,
             allowNull: false
         }
     });
 
-    Workout.belongsTo(User, { foreignKey: 'userId' });
-    Workout.hasOne(WorkoutType, { foreignKey: 'workoutTypeId' });
-    Workout.hasOne(WorkoutCategory, { foreignKey: 'workoutCategoryId' });
+    // Workout.belongsTo(models.user, { foreignKey: 'userId' });
+    // Workout.hasOne(models.WorkoutType, { foreignKey: 'workoutTypeId' });
+    // Workout.hasOne(models.WorkoutCategory, { foreignKey: 'workoutCategoryId' });
 
     return Workout;
 }

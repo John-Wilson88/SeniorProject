@@ -1,55 +1,55 @@
-//import { DataTypes } from 'sequelize'; // Import the built-in data types
+import { DataTypes } from 'sequelize'; // Import the built-in data types
 
 export default (sequelize, Sequelize) => {
     const user = sequelize.define('user', {
-        // userId: {
-        //     type: DataTypes.UUID,
-        //     defaultValue: Sequelize.UUIDV1,
-        //     primaryKey: true,
-        //     allowNull: false
-        // },
+        userId: {
+            type: DataTypes.UUID,
+            defaultValue: Sequelize.UUIDV1,
+            primaryKey: true,
+            allowNull: false
+        },
         fName: {
-            type: Sequelize.STRING,
+            type: DataTypes.STRING,
             allowNull: false
         },
         lName: {
-            type: Sequelize.STRING,
+            type: DataTypes.STRING,
             allowNull: false
         },
         addressNum: {
-            type: Sequelize.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: false
         },
         street: {
-            type: Sequelize.STRING,
+            type: DataTypes.STRING,
             allowNull: false
         },
         city: { 
-            type: Sequelize.STRING,
+            type: DataTypes.STRING,
             allowNull: false
         },
         state: {
-            type: Sequelize.STRING,
+            type: DataTypes.STRING,
             allowNull: false
         },
         zipCode: {
-            type: Sequelize.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: false
         },
         height: {
-            type: Sequelize.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: false
         },
         weight: {
-            type:Sequelize.INTEGER,
+            type:DataTypes.INTEGER,
             allowNull: false
         },
         dateOfBirth: {
-            type: Sequelize.DATEONLY,
-            allowNull: false
+            type: DataTypes.DATEONLY,
+            allowNull: true
         },
         emailAddress: {
-            type:Sequelize.STRING,
+            type:DataTypes.STRING,
             allowNull: false,
             validate: {
                 isEmail: true

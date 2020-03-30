@@ -2,7 +2,7 @@ import db from '../models';
 
 module.exports = (app) => {
     app.get('/api/users', (req, res) => {
-        db.User.findAll().then((results) => {
+        db.user.findAll().then((results) => {
             res.json(results);
         })
     });
@@ -10,7 +10,7 @@ module.exports = (app) => {
     app.post('/api/user', function(req, res) {
         db.user.create({
             fName: req.body.fName,
-            lName: req.body.fName,
+            lName: req.body.lName,
             addressNum: req.body.addressNum,
             street: req.body.street,
             city: req.body.city,

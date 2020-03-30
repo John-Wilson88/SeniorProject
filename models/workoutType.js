@@ -17,7 +17,7 @@ export default (sequelize, Sequelize) => {
         }
     });
 
-    WorkoutType.belongsToMany(Workout);
+   // WorkoutType.belongsToMany(Workout);
 
     return WorkoutType;
 }

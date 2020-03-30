@@ -30,20 +30,6 @@ class NewUser extends React.Component {
         event.preventDefault();
         console.log(this.state);
 
-        // const user = {
-        //     fName: this.state.fName,
-        //     lName: this.state.lName,
-        //     addressNum: this.state.addressNum,
-        //     street: this.state.street,
-        //     city: this.state.city,
-        //     state: this.state.state,
-        //     zipCode: this.state.zipCode,
-        //     height: this.state.height,
-        //     weight: this.state.weight,
-        //     dateOfBirth: this.state.dateOfBirth,
-        //     emailAddress: this.state.emailAddress
-        // }
-
         axios.post('/api/user', {
             fName: this.state.fName,
             lName: this.state.lName,
@@ -57,8 +43,7 @@ class NewUser extends React.Component {
             dateOfBirth: this.state.dateOfBirth,
             emailAddress: this.state.emailAddress
         }).then(res => {
-            console.log(res);
-            console.log(res.data);
+            console.log('DATA SENT - ' + res);
         });
     }
 
