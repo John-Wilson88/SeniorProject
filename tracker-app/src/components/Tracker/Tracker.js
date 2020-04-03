@@ -1,6 +1,8 @@
 import React from 'react';
 import Navbar from '../Navbar';
 import NewUser from '../NewUser';
+import NewWorkout from '../NewWorkout';
+
 
 class Tracker extends React.Component {
     // constructor(props) {
@@ -16,7 +18,9 @@ class Tracker extends React.Component {
                 <div className='container'>
                     <br />
 
-                    <NewUser />
+                    {/* <NewUser /> */}
+
+                    <NewWorkout />
 
                 </div>
 

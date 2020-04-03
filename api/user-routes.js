@@ -25,4 +25,7 @@ module.exports = (app) => {
             res.end();
         });
     });
+
+    // Need a GET route for a single user based off of their userId....
+
 };
