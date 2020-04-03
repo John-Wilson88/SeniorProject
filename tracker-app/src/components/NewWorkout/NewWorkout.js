@@ -1,4 +1,5 @@
 import React from 'react';
+import ExerciseInput from '../ExerciseInput'
 import axios from 'axios';
 
 class NewWorkout extends React.Component {
@@ -9,10 +10,11 @@ class NewWorkout extends React.Component {
           workoutType: '',
           workoutCategory: '',
           intensity: '',
-          exercises: []
+          exercises: [{ex:'', reps:'', sets:''}]
       };
       this.handleChange = this.handleChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
+      this.addExercise = this.addExercise.bind(this);
     }
 
     handleChange(event) {
@@ -21,6 +23,13 @@ class NewWorkout extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault();
+        console.log(this.state);
+    }
+
+    addExercise(event) {
+        this.setState((prevState) => ({
+            exercises:[...prevState.exercises, {ex:'', reps:'', sets:''}],
+        }));
         console.log(this.state);
     }
 
@@ -81,6 +90,19 @@ class NewWorkout extends React.Component {
                                         </select>
                                     </div>
                                 </div>
+
+                                {
+                                    this.state.exercises.map((val, idx) => {
+                                        let exId = `ex-${idx + 1}`, repId = `rep-${idx + 1}`, setId = `set-${idx + 1}`;
+                                        return (
+                                            <ExerciseInput key={exId} exId={exId} repId={repId} setId={setId}/>
+                                        )
+                                    })
+                                }
+
+
+                               
+                                <button type="button" className="btn btn-light" onClick={this.addExercise}>Add Exercise</button>
     
                                 <div className='form-row justify-content-center'>
                                     <button type='submit' className='btn btn-primary col-md-6' value='Submit'>Create Workout</button>
