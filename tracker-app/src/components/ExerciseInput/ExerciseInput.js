@@ -1,12 +1,19 @@
 import React from 'react';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function ExerciseInput(props){
 
         return(
             <div className='form-row'>
+{/* 
+                <div className='form-group col-md-1'>
+                    <button type="button" className="btn btn-danger" onClick={props.deleteExercise}><FontAwesomeIcon icon={['fab', 'minus-square']} /></button>
+                </div> 
+*/}
+
                 <div className='form-group col-md-6'>
                     <label htmlFor={props.exId}>Exercise</label>
-                    <select className='form-control' name={props.exId} id={props.exId}>
+                    <select className='form-control' name='ex' id={props.idx} value={props.value.ex} onChange={props.change}>
                         <option value='none'>Choose an Exercise</option>    
                         <option value='push up'>Push Up</option>    
                         <option value='squat'>Squat</option>
@@ -16,7 +23,7 @@ function ExerciseInput(props){
     
                 <div className='form-group col-md-3'>
                     <label htmlFor={props.repId}>Repetitions</label>
-                    <select className='form-control' name='Repetitions' id={props.repId}>
+                    <select className='form-control' name='reps' id={props.idx} value={props.value.reps} onChange={props.change}>
                         <option value='none'>Number of Reps</option>    
                         <option value='1'>1</option>    
                         <option value='2'>2</option>
@@ -33,7 +40,7 @@ function ExerciseInput(props){
     
                 <div className='form-group col-md-3'>
                     <label htmlFor={props.setId}>Sets</label>
-                    <select className='form-control' name='Sets' id={props.setId}>
+                    <select className='form-control' name='sets' id={props.idx} value={props.value.sets} onChange={props.change}>
                         <option value='none'>Number of Setss</option>    
                         <option value='1'>1</option>    
                         <option value='2'>2</option>

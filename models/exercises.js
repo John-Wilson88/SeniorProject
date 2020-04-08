@@ -1,39 +1,34 @@
 import { DataTypes } from 'sequelize'; // Import the built-in data types
 
 export default (sequelize, Sequelize) => {
-    const Workout = sequelize.define('Workout', {
-        workoutId: {
+    const Exercises = sequelize.define('Exercises', {
+        exercisesId: {
             type: DataTypes.UUID,
             defaultValue: Sequelize.UUIDV1,
             primaryKey: true,
             allowNull: false
         },
-        workoutTitle: {
+        ex: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        typeTitle: {
-            type: DataTypes.STRING,
+        reps: {
+            type: DataTypes.INTEGER,
             allowNull: false
         },
-        categoryTitle: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        intensity: {
+        sets: {
             type: DataTypes.INTEGER,
             allowNull: false
         }
     });
 
-    Workout.associate = (models) => {
-        Workout.belongsToMany(models.Exercises, {
+    Exercises.associate = (models) => {
+        Exercises.belongsToMany(models.Workout, {
             through: 'WorkoutExercises',
-            as: 'exercises',
-            foreignKey: 'workoutId'
+            as: 'workouts',
+            foreignKey: 'exercisesId'
         });
     };
     
-
-    return Workout;
-}
+    return Exercises;
+};

@@ -10,6 +10,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 require("./api/user-routes.js")(app);
+require("./api/workout-routes.js")(app);
 
 db.sequelize.sync({force: true}).then(() => {
 	seeds(db.sequelize.queryInterface, db.Sequelize);

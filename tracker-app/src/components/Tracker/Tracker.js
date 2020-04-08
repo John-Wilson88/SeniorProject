@@ -18,7 +18,9 @@ class Tracker extends React.Component {
                 <div className='container'>
                     <br />
 
-                    {/* <NewUser /> */}
+                     <NewUser /> 
+
+                    <br />
 
                     <NewWorkout />
 

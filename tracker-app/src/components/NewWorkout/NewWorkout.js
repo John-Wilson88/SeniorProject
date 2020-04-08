@@ -15,6 +15,9 @@ class NewWorkout extends React.Component {
       this.handleChange = this.handleChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
       this.addExercise = this.addExercise.bind(this);
+      //this.deleteExercise = this.deleteExercise.bind(this);
+      this.updateExercise = this.updateExercise.bind(this);
+
     }
 
     handleChange(event) {
@@ -23,16 +26,42 @@ class NewWorkout extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        console.log(this.state);
+        let exArr = this.state.exercises;
+        axios.post('/api/workout', {
+            workoutTitle: this.state.workoutTitle,
+            workoutType: this.state.workoutType,
+            workoutCategory: this.state.workoutCategory,
+            intensity: this.state.intensity,
+            exercises: this.state.exercises
+        }).then(res => {
+            console.log('DataSent' + res);
+        });
     }
 
     addExercise(event) {
         this.setState((prevState) => ({
             exercises:[...prevState.exercises, {ex:'', reps:'', sets:''}],
         }));
-        console.log(this.state);
+        console.log(this.state.exercises);
     }
 
+    updateExercise(event) {
+        let i = event.target.id;
+        if(i === -1) {
+            console.log("i === -1");
+        } else {
+            this.setState({
+                exercises: [
+                    ...this.state.exercises.slice(0, i),
+                    Object.assign({}, this.state.exercises[i], {[event.target.name]: event.target.value}),
+                    ...this.state.exercises.slice(i+1)
+                ]
+            });
+        }
+    }
+
+    // deleteExercise(event) {
+    // }
 
     render() {
         return (
@@ -92,18 +121,20 @@ class NewWorkout extends React.Component {
                                 </div>
 
                                 {
-                                    this.state.exercises.map((val, idx) => {
-                                        let exId = `ex-${idx + 1}`, repId = `rep-${idx + 1}`, setId = `set-${idx + 1}`;
+                                    this.state.exercises.map((val, index) => {
+                                        let exId = `ex-${index + 1}`, repId = `rep-${index + 1}`, setId = `set-${index + 1}`, idx=index, value=this.state.exercises[idx], change=this.updateExercise;
                                         return (
-                                            <ExerciseInput key={exId} exId={exId} repId={repId} setId={setId}/>
+                                            <ExerciseInput key={exId} exId={exId} repId={repId} setId={setId} value={value} change={change} idx={idx} />
                                         )
                                     })
                                 }
 
+                                <div className='form-row justify-content-end'>
+                                    <button type="button" className="btn btn-dark" onClick={this.addExercise}>Add Exercise</button>
+                                </div>
+                                
+                                <br />
 
-                               
-                                <button type="button" className="btn btn-light" onClick={this.addExercise}>Add Exercise</button>
-    
                                 <div className='form-row justify-content-center'>
                                     <button type='submit' className='btn btn-primary col-md-6' value='Submit'>Create Workout</button>
                                 </div>
