@@ -1,5 +1,5 @@
 import React from 'react';
-import ExerciseInput from '../ExerciseInput'
+import ExerciseInput from '../ExerciseInput';
 import axios from 'axios';
 
 class NewWorkout extends React.Component {

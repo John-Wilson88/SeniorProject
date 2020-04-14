@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '../Navbar';
 import NewUser from '../NewUser';
 import NewWorkout from '../NewWorkout';
+import ViewWorkouts from '../ViewWorkouts';
 
 
 class Tracker extends React.Component {
@@ -18,11 +19,15 @@ class Tracker extends React.Component {
                 <div className='container'>
                     <br />
 
-                     <NewUser /> 
+                     {/* <NewUser />  */}
 
                     <br />
 
                     <NewWorkout />
+
+                    <br />
+
+                    <ViewWorkouts />
 
                 </div>
 

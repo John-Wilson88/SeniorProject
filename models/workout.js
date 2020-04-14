@@ -28,8 +28,8 @@ export default (sequelize, Sequelize) => {
 
     Workout.associate = (models) => {
         Workout.belongsToMany(models.Exercises, {
-            through: 'WorkoutExercises',
             as: 'exercises',
+            through: 'WorkoutExercises',
             foreignKey: 'workoutId'
         });
     };

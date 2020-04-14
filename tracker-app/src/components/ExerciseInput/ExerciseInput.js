@@ -59,4 +59,4 @@ function ExerciseInput(props){
 
 }
 
-export default ExerciseInput
+export default ExerciseInput;
