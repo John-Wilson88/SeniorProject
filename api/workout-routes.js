@@ -23,8 +23,8 @@ module.exports = (app) => {
     app.post('/api/workout', function(req, res) {
         db.Workout.create({
             workoutTitle: req.body.workoutTitle,
-            typeTitle: req.body.workoutType,
-            categoryTitle: req.body.workoutCategory,
+            type: req.body.type,
+            category: req.body.category,
             intensity: req.body.intensity
         }).then((exercises) => {
             //console.log(exercises);

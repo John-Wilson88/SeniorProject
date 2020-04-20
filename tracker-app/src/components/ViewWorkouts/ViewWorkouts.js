@@ -24,7 +24,6 @@ class ViewWorkouts extends React.Component {
         const logWorkouts = async () =>{
             const workouts = getWorkouts().then(response => {
                 if(response.data) {
-                    console.log(response.data)
                     this.setState({exercises: response.data});
                 }
             }).catch(err => {
@@ -33,27 +32,22 @@ class ViewWorkouts extends React.Component {
         }
 
         logWorkouts();
-        console.log(this.state.exercises);
     }
 
 
     render() {
         return(
             <div>
-
-
-            {
-                this.state.exercises.map((val, index) => {
-                    let exObj = val, exId = `ex-${index + 1}`; 
-                    return (
-                        <WorkoutCard key={exId} exTitle={exObj.workoutTitle} exType={exObj.typeTitle} exCategory={exObj.categoryTitle} exIntensity={exObj.intensity} />
-                    )
-                })
-            }
-
-
-                <WorkoutCard />
-                
+                <div className="row row-cols-1 row-cols-md-3">
+                    {
+                        this.state.exercises.reverse().map((val, index) => {
+                            let exObj = val, exId = `ex-${index + 1}`; 
+                            return (
+                                <WorkoutCard key={exId} exId={exId} exTitle={exObj.workoutTitle} exType={exObj.type} exCategory={exObj.category} exIntensity={exObj.intensity} />
+                            )
+                        })
+                    }
+                </div>
             </div>
         );
     }

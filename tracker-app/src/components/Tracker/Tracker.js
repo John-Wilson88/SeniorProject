@@ -1,9 +1,13 @@
 import React from 'react';
+import { Router } from 'react-router-dom';
 import Navbar from '../Navbar';
-import NewUser from '../NewUser';
-import NewWorkout from '../NewWorkout';
-import ViewWorkouts from '../ViewWorkouts';
-
+import Footer from '../Footer';
+import './Tracker.css'
+// import NewUser from '../NewUser';
+// import NewWorkout from '../NewWorkout';
+// import ViewWorkouts from '../ViewWorkouts';
+import history from '../../services/history';
+import Routes from '../../routes';
 
 class Tracker extends React.Component {
     // constructor(props) {
@@ -14,24 +18,17 @@ class Tracker extends React.Component {
 
     render() {
         return(
-            <div>
+            <div>  
                 <Navbar />
                 <div className='container'>
+                    <br /> 
                     <br />
-
-                     {/* <NewUser />  */}
-
                     <br />
-
-                    <NewWorkout />
-
-                    <br />
-
-                    <ViewWorkouts />
-
+                    <Router history={history} >
+                        <Routes />
+                    </Router>
                 </div>
-
-
+                <Footer />
             </div>
         )
     }

@@ -12,11 +12,11 @@ export default (sequelize, Sequelize) => {
             type: DataTypes.STRING,
             allowNull: false
         },
-        typeTitle: {
+        type: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        categoryTitle: {
+        category: {
             type: DataTypes.STRING,
             allowNull: false
         },

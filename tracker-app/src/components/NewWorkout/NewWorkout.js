@@ -29,8 +29,8 @@ class NewWorkout extends React.Component {
         let exArr = this.state.exercises;
         axios.post('/api/workout', {
             workoutTitle: this.state.workoutTitle,
-            workoutType: this.state.workoutType,
-            workoutCategory: this.state.workoutCategory,
+            type: this.state.workoutType,
+            category: this.state.workoutCategory,
             intensity: this.state.intensity,
             exercises: this.state.exercises
         }).then(res => {

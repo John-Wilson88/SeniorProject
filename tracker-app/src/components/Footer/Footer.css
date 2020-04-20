@@ -1,0 +1,21 @@
+.footerDiv {
+	text-align: center;
+	margin-top: 2%;
+	background-color: rgb(248,249,250);
+	height: 185px;
+	width: 100%;
+	color: rgb(125, 125, 126);
+	position: static;
+	bottom: 0%;
+}
+
+.footerList {
+	padding: 10px;
+	list-style: none;
+	position: relative;
+	top: 45%;
+}
+
+.footerList li {
+	display: inline;
+}

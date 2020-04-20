@@ -15,7 +15,170 @@ import Sequelize from 'sequelize';
         dateOfBirth: "2020-03-28",
         emailAddress: "thisstateemailAddress@email.com"
     })
-    
+
+    queryInterface.sequelize.models.Workout.create({
+        workoutTitle: 'Tester',
+        type: 'Full Test',
+        category: 'Upper Test',
+        intensity: 5
+    })
+    queryInterface.sequelize.models.Workout.create({
+        workoutTitle: 'Tester2',
+        type: 'Full Test2',
+        category: 'Upper Test2',
+        intensity: 8
+    })
+    queryInterface.sequelize.models.Workout.create({
+        workoutTitle: 'Tester3',
+        type: 'Full Test3',
+        category: 'Upper Test3',
+        intensity: 10
+    })
+    queryInterface.sequelize.models.Workout.create({
+        workoutTitle: 'Tester',
+        type: 'Full Test',
+        category: 'Upper Test',
+        intensity: 5
+    })
+    queryInterface.sequelize.models.Workout.create({
+        workoutTitle: 'Tester2',
+        type: 'Full Test2',
+        category: 'Upper Test2',
+        intensity: 8
+    })
+    queryInterface.sequelize.models.Workout.create({
+        workoutTitle: 'Tester3',
+        type: 'Full Test3',
+        category: 'Upper Test3',
+        intensity: 10
+    })
+    queryInterface.sequelize.models.Workout.create({
+        workoutTitle: 'Tester',
+        type: 'Full Test',
+        category: 'Upper Test',
+        intensity: 5
+    })
+    queryInterface.sequelize.models.Workout.create({
+        workoutTitle: 'Tester2',
+        type: 'Full Test2',
+        category: 'Upper Test2',
+        intensity: 8
+    })
+    queryInterface.sequelize.models.Workout.create({
+        workoutTitle: 'Tester3',
+        type: 'Full Test3',
+        category: 'Upper Test3',
+        intensity: 10
+    })
+    queryInterface.sequelize.models.Workout.create({
+        workoutTitle: 'Tester',
+        type: 'Full Test',
+        category: 'Upper Test',
+        intensity: 5
+    })
+    queryInterface.sequelize.models.Workout.create({
+        workoutTitle: 'Tester2',
+        type: 'Full Test2',
+        category: 'Upper Test2',
+        intensity: 8
+    })
+    queryInterface.sequelize.models.Workout.create({
+        workoutTitle: 'Tester3',
+        type: 'Full Test3',
+        category: 'Upper Test3',
+        intensity: 10
+    })
+    queryInterface.sequelize.models.Workout.create({
+        workoutTitle: 'Tester',
+        type: 'Full Test',
+        category: 'Upper Test',
+        intensity: 5
+    })
+    queryInterface.sequelize.models.Workout.create({
+        workoutTitle: 'Tester2',
+        type: 'Full Test2',
+        category: 'Upper Test2',
+        intensity: 8
+    })
+    queryInterface.sequelize.models.Workout.create({
+        workoutTitle: 'Tester3',
+        type: 'Full Test3',
+        category: 'Upper Test3',
+        intensity: 10
+    })
+    queryInterface.sequelize.models.Workout.create({
+        workoutTitle: 'Tester',
+        type: 'Full Test',
+        category: 'Upper Test',
+        intensity: 5
+    })
+    queryInterface.sequelize.models.Workout.create({
+        workoutTitle: 'Tester2',
+        type: 'Full Test2',
+        category: 'Upper Test2',
+        intensity: 8
+    })
+    queryInterface.sequelize.models.Workout.create({
+        workoutTitle: 'Tester3',
+        type: 'Full Test3',
+        category: 'Upper Test3',
+        intensity: 10
+    })
+    queryInterface.sequelize.models.Workout.create({
+        workoutTitle: 'Tester',
+        type: 'Full Test',
+        category: 'Upper Test',
+        intensity: 5
+    })
+    queryInterface.sequelize.models.Workout.create({
+        workoutTitle: 'Tester2',
+        type: 'Full Test2',
+        category: 'Upper Test2',
+        intensity: 8
+    })
+    queryInterface.sequelize.models.Workout.create({
+        workoutTitle: 'Tester3',
+        type: 'Full Test3',
+        category: 'Upper Test3',
+        intensity: 10
+    })
+    queryInterface.sequelize.models.Workout.create({
+        workoutTitle: 'Tester',
+        type: 'Full Test',
+        category: 'Upper Test',
+        intensity: 5
+    })
+    queryInterface.sequelize.models.Workout.create({
+        workoutTitle: 'Tester2',
+        type: 'Full Test2',
+        category: 'Upper Test2',
+        intensity: 8
+    })
+    queryInterface.sequelize.models.Workout.create({
+        workoutTitle: 'Tester3',
+        type: 'Full Test3',
+        category: 'Upper Test3',
+        intensity: 10
+    })
+    queryInterface.sequelize.models.Workout.create({
+        workoutTitle: 'Tester',
+        type: 'Full Test',
+        category: 'Upper Test',
+        intensity: 5
+    })
+    queryInterface.sequelize.models.Workout.create({
+        workoutTitle: 'Tester2',
+        type: 'Full Test2',
+        category: 'Upper Test2',
+        intensity: 8
+    })
+    queryInterface.sequelize.models.Workout.create({
+        workoutTitle: 'Tester3',
+        type: 'Full Test3',
+        category: 'Upper Test3',
+        intensity: 10
+    })
+
 }
 
 module.exports = seeds;
