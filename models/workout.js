@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize'; // Import the built-in data types
 
 export default (sequelize, Sequelize) => {
-    const Workout = sequelize.define('Workout', {
+    const Workout = sequelize.define('workouts', {
         workoutId: {
             type: DataTypes.UUID,
             defaultValue: Sequelize.UUIDV1,
@@ -27,11 +27,7 @@ export default (sequelize, Sequelize) => {
     });
 
     Workout.associate = (models) => {
-        Workout.belongsToMany(models.Exercises, {
-            as: 'exercises',
-            through: 'WorkoutExercises',
-            foreignKey: 'workoutId'
-        });
+        Workout.hasMany(models.exercises);
     };
     
 

@@ -34,7 +34,7 @@ class NewWorkout extends React.Component {
             intensity: this.state.intensity,
             exercises: this.state.exercises
         }).then(res => {
-            console.log('DataSent' + res);
+            // console.log('DataSent' + res);
         });
     }
 
@@ -65,81 +65,84 @@ class NewWorkout extends React.Component {
 
     render() {
         return (
-        <div className='row justify-content-center'>
-                <div className='col-md-10'>
-                    <div className='card'>
-                        <div className='card-body'>
-                            <h3 className='card-title'>Create New Workout</h3>
-                            <form onSubmit={this.handleSubmit}>
-                                <div className='form-row'>
-                                    <div className='form-group col-md-12'>
-                                        <label htmlFor='firstName'>Workout Title</label>
-                                        <input type='text' className='form-control' name='workoutTitle' value={this.state.workoutTitle} onChange={this.handleChange}></input>
+            <div>
+                <br />
+                <div className='row justify-content-center'>
+                    <div className='col-md-10'>
+                        <div className='card'>
+                            <div className='card-body'>
+                                <h3 className='card-title'>Create New Workout</h3>
+                                <form onSubmit={this.handleSubmit}>
+                                    <div className='form-row'>
+                                        <div className='form-group col-md-12'>
+                                            <label htmlFor='firstName'>Workout Title</label>
+                                            <input type='text' className='form-control' name='workoutTitle' value={this.state.workoutTitle} onChange={this.handleChange}></input>
+                                        </div>
                                     </div>
-                                </div>
-                                  
-                                <div className='form-row'>
-                                    <div className='form-group col-md-12'>
-                                        <label htmlFor='state'>Workout Type</label>
-                                        <select className='form-control' name='workoutType' value={this.state.workoutType} onChange={this.handleChange}>
-                                            <option value='none'>Choose a Workout Type</option>    
-                                            <option value='aerobic'>Aerobic (Endurance)</option>    
-                                            <option value='strength'>Strength</option>
-                                            <option value='flexability'>Flexability</option>      
-                                        </select>
+                                    
+                                    <div className='form-row'>
+                                        <div className='form-group col-md-12'>
+                                            <label htmlFor='state'>Workout Type</label>
+                                            <select className='form-control' name='workoutType' value={this.state.workoutType} onChange={this.handleChange}>
+                                                <option value='none'>Choose a Workout Type</option>    
+                                                <option value='aerobic'>Aerobic (Endurance)</option>    
+                                                <option value='strength'>Strength</option>
+                                                <option value='flexability'>Flexability</option>      
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div className='form-row'>
-                                    <div className='form-group col-md-12'>
-                                        <label htmlFor='state'>Workout Category</label>
-                                        <select className='form-control' name='workoutCategory' value={this.state.workoutCategory} onChange={this.handleChange}>
-                                            <option value='none'>Choose a Workout Type</option>    
-                                            <option value='Split'>Split Workout</option>    
-                                            <option value='Full Body'>Full Body Workout</option>     
-                                        </select>
+                                    <div className='form-row'>
+                                        <div className='form-group col-md-12'>
+                                            <label htmlFor='state'>Workout Category</label>
+                                            <select className='form-control' name='workoutCategory' value={this.state.workoutCategory} onChange={this.handleChange}>
+                                                <option value='none'>Choose a Workout Type</option>    
+                                                <option value='Split'>Split Workout</option>    
+                                                <option value='Full Body'>Full Body Workout</option>     
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div className='form-row'>
-                                    <div className='form-group col-md-12'>
-                                        <label htmlFor='state'>Workout Intensity</label>
-                                        <select className='form-control' name='intensity' value={this.state.intensity} onChange={this.handleChange}>
-                                            <option value='none'>Choose a level of Intensity</option>    
-                                            <option value='1'>1 (lowest amount of effort)</option>    
-                                            <option value='2'>2</option>
-                                            <option value='3'>3</option>
-                                            <option value='4'>4</option>
-                                            <option value='5'>5 (moderate amount of effort)</option>
-                                            <option value='6'>6</option>
-                                            <option value='7'>7</option>
-                                            <option value='8'>8</option>
-                                            <option value='9'>9</option>
-                                            <option value='10'>10 (maximum amount of effort)</option>     
-                                        </select>
+                                    <div className='form-row'>
+                                        <div className='form-group col-md-12'>
+                                            <label htmlFor='state'>Workout Intensity</label>
+                                            <select className='form-control' name='intensity' value={this.state.intensity} onChange={this.handleChange}>
+                                                <option value='none'>Choose a level of Intensity</option>    
+                                                <option value='1'>1 (lowest amount of effort)</option>    
+                                                <option value='2'>2</option>
+                                                <option value='3'>3</option>
+                                                <option value='4'>4</option>
+                                                <option value='5'>5 (moderate amount of effort)</option>
+                                                <option value='6'>6</option>
+                                                <option value='7'>7</option>
+                                                <option value='8'>8</option>
+                                                <option value='9'>9</option>
+                                                <option value='10'>10 (maximum amount of effort)</option>     
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
 
-                                {
-                                    this.state.exercises.map((val, index) => {
-                                        let exId = `ex-${index + 1}`, repId = `rep-${index + 1}`, setId = `set-${index + 1}`, idx=index, value=this.state.exercises[idx], change=this.updateExercise;
-                                        return (
-                                            <ExerciseInput key={exId} exId={exId} repId={repId} setId={setId} value={value} change={change} idx={idx} />
-                                        )
-                                    })
-                                }
+                                    {
+                                        this.state.exercises.map((val, index) => {
+                                            let exId = `ex-${index + 1}`, repId = `rep-${index + 1}`, setId = `set-${index + 1}`, idx=index, value=this.state.exercises[idx], change=this.updateExercise;
+                                            return (
+                                                <ExerciseInput key={exId} exId={exId} repId={repId} setId={setId} value={value} change={change} idx={idx} />
+                                            )
+                                        })
+                                    }
 
-                                <div className='form-row justify-content-end'>
-                                    <button type="button" className="btn btn-dark" onClick={this.addExercise}>Add Exercise</button>
-                                </div>
-                                
-                                <br />
+                                    <div className='form-row justify-content-end'>
+                                        <button type="button" className="btn btn-dark" onClick={this.addExercise}>Add Exercise</button>
+                                    </div>
+                                    
+                                    <br />
 
-                                <div className='form-row justify-content-center'>
-                                    <button type='submit' className='btn btn-primary col-md-6' value='Submit'>Create Workout</button>
-                                </div>
-    
-                            </form>
+                                    <div className='form-row justify-content-center'>
+                                        <button type='submit' className='btn btn-primary col-md-6' value='Submit'>Create Workout</button>
+                                    </div>
+        
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>

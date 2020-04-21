@@ -38,6 +38,7 @@ class ViewWorkouts extends React.Component {
     render() {
         return(
             <div>
+                <br />
                 <div className="row row-cols-1 row-cols-md-3">
                     {
                         this.state.exercises.reverse().map((val, index) => {

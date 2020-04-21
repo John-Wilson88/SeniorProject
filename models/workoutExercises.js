@@ -6,7 +6,7 @@ export default (sequelize, Sequelize) => {
             type: DataTypes.UUID,
             allowNull: false,
             references: {
-                model: 'Exercises',
+                model: 'exercises',
                 key: 'exercisesId'
             }
         },
@@ -14,7 +14,7 @@ export default (sequelize, Sequelize) => {
             type: DataTypes.UUID,
             allowNull: false,
             references: {
-                model: 'Workout',
+                model: 'workouts',
                 key: 'workoutId'
             }
         }
