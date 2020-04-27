@@ -42,9 +42,9 @@ class ViewWorkouts extends React.Component {
                 <div className="row row-cols-1 row-cols-md-3">
                     {
                         this.state.exercises.reverse().map((val, index) => {
-                            let exObj = val, exId = `ex-${index + 1}`; 
+                            let exObj = val, exId = `ex-${index + 1}`, dropId = `exGroup${index +1}`, dataDropId = `#exGroup${index +1}`, modalId = `exResult${index +1}`, dataModalId = `#exResult${index +1}`; 
                             return (
-                                <WorkoutCard key={exId} exId={exId} exTitle={exObj.workoutTitle} exType={exObj.type} exCategory={exObj.category} exIntensity={exObj.intensity} />
+                                <WorkoutCard key={exId} exId={exId} dropId={dropId} dataDropId={dataDropId} modalId={modalId} dataModalId={dataModalId} workoutId={exObj.workoutId} exTitle={exObj.workoutTitle} exType={exObj.type} exCategory={exObj.category} exIntensity={exObj.intensity} exercises={exObj.exercises} />
                             )
                         })
                     }

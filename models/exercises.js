@@ -19,15 +19,11 @@ export default (sequelize, Sequelize) => {
         sets: {
             type: DataTypes.INTEGER,
             allowNull: false
-        },
-        workoutId: {
-            type: DataTypes.UUID,
-            // allowNull: false
         }
     });
 
     Exercises.associate = (models) => {
-        Exercises.belongsTo(models.workouts);
+        Exercises.belongsTo(models.workouts, {foreignKey: 'workoutId', targetKey: 'workoutId'});
     };
     
     return Exercises;

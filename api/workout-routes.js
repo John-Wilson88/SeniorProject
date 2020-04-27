@@ -2,13 +2,62 @@ import db from '../models';
 
 module.exports = (app) => {
     app.get('/api/workouts', (req, res) => {
-        db.workouts.findAll().then((results) => {
-            res.json(results);
+        db.workouts.findAll({
+            include: [
+                {
+                    model: db.exercises
+                }
+            ]
+        }).then(workouts => {
+            const resObj = workouts.map(workout => {
+                return Object.assign(
+                    {},
+                    {
+                        workoutId: workout.workoutId,
+                        workoutTitle: workout.workoutTitle,
+                        type: workout.type,
+                        category: workout.category,
+                        intensity: workout.intensity,
+                        exercises: workout.exercises.map(exercise => {
+
+                            return Object.assign(
+                                {},
+                                {
+                                    exercisesId: exercise.exercisesId,
+                                    ex: exercise.ex,
+                                    reps: exercise.reps,
+                                    sets: exercise.sets,
+                                    workoutId: exercise.workoutId
+                                }
+                            )
+                        })
+                    }
+                )
+            })
+
+            res.json(resObj);
+
         }).catch((err) => {
             console.log(err);
             res.json(err);
         })
     });
+            
+            
+    //         (workouts) => {
+    //         //res.json(results);
+        
+        
+        
+        
+        
+        
+        
+    //     }).catch((err) => {
+    //         console.log(err);
+    //         res.json(err);
+    //     })
+    // });
 
     app.get('/api/exercises', (req, res) => {
         db.exercises.findAll().then((results) => {

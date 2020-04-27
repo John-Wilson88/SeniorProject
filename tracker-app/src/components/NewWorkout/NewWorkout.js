@@ -1,6 +1,7 @@
 import React from 'react';
 import ExerciseInput from '../ExerciseInput';
 import axios from 'axios';
+import { Redirect } from "react-router-dom";
 
 class NewWorkout extends React.Component {
     constructor(props) {
@@ -10,14 +11,14 @@ class NewWorkout extends React.Component {
           workoutType: '',
           workoutCategory: '',
           intensity: '',
-          exercises: [{ex:'', reps:'', sets:''}]
+          exercises: [{ex:'', reps:'', sets:''}],
+          redirect: null
       };
       this.handleChange = this.handleChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
       this.addExercise = this.addExercise.bind(this);
       //this.deleteExercise = this.deleteExercise.bind(this);
       this.updateExercise = this.updateExercise.bind(this);
-
     }
 
     handleChange(event) {
@@ -35,6 +36,7 @@ class NewWorkout extends React.Component {
             exercises: this.state.exercises
         }).then(res => {
             // console.log('DataSent' + res);
+            this.setState({ redirect: "/allworkouts" });
         });
     }
 
@@ -64,6 +66,10 @@ class NewWorkout extends React.Component {
     // }
 
     render() {
+        if (this.state.redirect) {
+            return <Redirect to={this.state.redirect} />
+          }
+
         return (
             <div>
                 <br />

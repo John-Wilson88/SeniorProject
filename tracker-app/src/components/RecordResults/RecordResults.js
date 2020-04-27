@@ -7,7 +7,7 @@ class RecordResults extends React.Component {
       this.state =  {
           difficulty: '',
           comments: '',
-          workoutId: '1e6ffcb0-8341-11ea-a2ae-317c4489e43a'
+          workoutId: props.workoutId
       };
       this.handleChange = this.handleChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
@@ -34,47 +34,58 @@ class RecordResults extends React.Component {
         return (
             <div>
                 <br />
-                <div className='row justify-content-center'>
-                    <div className='col-md-10'>
-                        <div className='card'>
-                            <div className='card-body'>
-                                <h3 className='card-title'>Record Results</h3>
-                                <form onSubmit={this.handleSubmit}>                                                                    
-                                    <div className='form-row'>
-                                        <div className='form-group col-md-12'>
-                                            <label htmlFor='state'>Workout Difficulty</label>
-                                            <select className='form-control' name='difficulty' value={this.state.difficulty} onChange={this.handleChange}>
-                                                <option value='none'>Choose a level of Intensity</option>    
-                                                <option value='1'>1 (lowest amount of difficulty)</option>    
-                                                <option value='2'>2</option>
-                                                <option value='3'>3</option>
-                                                <option value='4'>4</option>
-                                                <option value='5'>5 (moderate amount of difficulty)</option>
-                                                <option value='6'>6</option>
-                                                <option value='7'>7</option>
-                                                <option value='8'>8</option>
-                                                <option value='9'>9</option>
-                                                <option value='10'>10 (maximum amount of difficulty)</option>     
-                                            </select>
-                                        </div>
-                                    </div>
 
-                                    <div className='form-row'>
-                                        <div className='form-group col-md-12'>
-                                            <label htmlFor='comments'>Personal Comments</label>
-                                            <textarea type='text' className='form-control' name='comments' value={this.state.comments} onChange={this.handleChange}></textarea>
-                                        </div>
-                                    </div>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target={this.props.modalTargetId}>Record Results</button>
 
-                                    <div className='form-row justify-content-center'>
-                                        <button type='submit' className='btn btn-primary col-md-6' value='Submit'>Record Result</button>
-                                    </div>
-        
-                                </form>
+                <div class="modal fade" id={this.props.modalTarget} tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Record Results</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                    <form onSubmit={this.handleSubmit}>                                                                    
+                        <div className='form-row'>
+                            <div className='form-group col-md-12'>
+                                <label htmlFor='state'>Workout Difficulty</label>
+                                <select className='form-control' name='difficulty' value={this.state.difficulty} onChange={this.handleChange}>
+                                    <option value='none'>Choose a level of Intensity</option>    
+                                    <option value='1'>1 (lowest amount of difficulty)</option>    
+                                    <option value='2'>2</option>
+                                    <option value='3'>3</option>
+                                    <option value='4'>4</option>
+                                    <option value='5'>5 (moderate amount of difficulty)</option>
+                                    <option value='6'>6</option>
+                                    <option value='7'>7</option>
+                                    <option value='8'>8</option>
+                                    <option value='9'>9</option>
+                                    <option value='10'>10 (maximum amount of difficulty)</option>     
+                                </select>
                             </div>
                         </div>
+
+                        <div className='form-row'>
+                            <div className='form-group col-md-12'>
+                                <label htmlFor='comments'>Personal Comments</label>
+                                <textarea type='text' className='form-control' name='comments' value={this.state.comments} onChange={this.handleChange}></textarea>
+                            </div>
+                        </div>
+
+                        <div className='form-row justify-content-center'>
+                            <button type='submit' className='btn btn-primary col-md-6' value='Submit'>Submit Result</button>
+                        </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
                     </div>
                 </div>
+                </div>
+
             </div>
         )
     }
@@ -83,3 +94,6 @@ class RecordResults extends React.Component {
 }
 
 export default RecordResults;
+
+
+

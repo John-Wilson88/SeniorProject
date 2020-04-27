@@ -27,7 +27,7 @@ export default (sequelize, Sequelize) => {
     });
 
     Workout.associate = (models) => {
-        Workout.hasMany(models.exercises);
+        Workout.hasMany(models.exercises, {foreignKey: 'workoutId', targetKey: 'workoutId'});
     };
     
 

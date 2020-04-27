@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { Redirect } from "react-router-dom";
 
 class NewUser extends React.Component {
 
@@ -16,7 +17,9 @@ class NewUser extends React.Component {
           zipCode: '',
           dateOfBirth: '',
           height: '',
-          weight: ''
+          weight: '',
+          redirect: null
+
       };
       this.handleChange = this.handleChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
@@ -44,10 +47,16 @@ class NewUser extends React.Component {
             emailAddress: this.state.emailAddress
         }).then(res => {
             console.log('DATA SENT - ' + res);
+            this.setState({ redirect: "/" });
+
         });
     }
 
     render() {
+        if (this.state.redirect) {
+            return <Redirect to={this.state.redirect} />
+        }
+        
         return(
             <div >
                 <br />

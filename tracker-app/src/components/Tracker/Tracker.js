@@ -17,10 +17,10 @@ class Tracker extends React.Component {
         return(
             <div>  
                 <Navbar />
+
                 <div className='container'>
-                    <br /> 
-                    <br /> 
-                    
+                    <br />
+                    <br />
                     <Router history={history} >
                         <Routes />
                     </Router>
