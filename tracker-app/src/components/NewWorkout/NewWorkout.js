@@ -17,7 +17,6 @@ class NewWorkout extends React.Component {
       this.handleChange = this.handleChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
       this.addExercise = this.addExercise.bind(this);
-      //this.deleteExercise = this.deleteExercise.bind(this);
       this.updateExercise = this.updateExercise.bind(this);
     }
 
@@ -35,7 +34,6 @@ class NewWorkout extends React.Component {
             intensity: this.state.intensity,
             exercises: this.state.exercises
         }).then(res => {
-            // console.log('DataSent' + res);
             this.setState({ redirect: "/allworkouts" });
         });
     }
@@ -61,9 +59,6 @@ class NewWorkout extends React.Component {
             });
         }
     }
-
-    // deleteExercise(event) {
-    // }
 
     render() {
         if (this.state.redirect) {

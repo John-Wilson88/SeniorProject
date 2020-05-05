@@ -24,3 +24,5 @@ export default (sequelize, Sequelize) => {
 
     return Result;
 }
+
+

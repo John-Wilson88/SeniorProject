@@ -28,3 +28,8 @@ export default (sequelize, Sequelize) => {
     
     return Exercises;
 };
+
+
+
+
+

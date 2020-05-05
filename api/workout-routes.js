@@ -42,22 +42,6 @@ module.exports = (app) => {
             res.json(err);
         })
     });
-            
-            
-    //         (workouts) => {
-    //         //res.json(results);
-        
-        
-        
-        
-        
-        
-        
-    //     }).catch((err) => {
-    //         console.log(err);
-    //         res.json(err);
-    //     })
-    // });
 
     app.get('/api/exercises', (req, res) => {
         db.exercises.findAll().then((results) => {
@@ -67,16 +51,6 @@ module.exports = (app) => {
             res.json(err);
         })
     });
-
-    // app.get('/api/workout-exercises', (req, res) => {
-    //     db.WorkoutExercises.findAll().then((results) => {
-    //         res.json(results);
-    //     }).catch((err) => {
-    //         console.log(err);
-    //         res.json(err);
-    //     })
-    // });
-
 
     app.post('/api/workout', function(req, res) {
         db.workouts.create({

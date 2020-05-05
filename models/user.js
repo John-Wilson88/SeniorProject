@@ -60,3 +60,5 @@ export default (sequelize, Sequelize) => {
     return user;
 
 };
+
+

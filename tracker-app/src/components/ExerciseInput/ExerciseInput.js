@@ -1,15 +1,9 @@
 import React from 'react';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function ExerciseInput(props){
 
         return(
             <div className='form-row'>
-{/* 
-                <div className='form-group col-md-1'>
-                    <button type="button" className="btn btn-danger" onClick={props.deleteExercise}><FontAwesomeIcon icon={['fab', 'minus-square']} /></button>
-                </div> 
-*/}
 
                 <div className='form-group col-md-6'>
                     <label htmlFor={props.exId}>Exercise</label>
